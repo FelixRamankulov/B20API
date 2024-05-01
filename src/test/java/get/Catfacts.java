@@ -3,9 +3,11 @@ package get;
 import io.restassured.RestAssured;
 import io.restassured.common.mapper.TypeRef;
 import io.restassured.response.Response;
+import org.junit.Assert;
 import org.junit.Test;
 import pojo.CatDataPojo;
 import pojo.FactPojo;
+import pojo.LinksPojo;
 
 import java.util.List;
 import java.util.Map;
@@ -53,7 +55,20 @@ public class Catfacts {
             System.out.println(temp.getFact());
             String fact = temp.getFact();
             int factLength = fact.length();
+            Assert.assertEquals(factLength, temp.getLength());
 
+        }
+
+        List<LinksPojo> linkList = deserializedResponse.getLinks();
+
+        for (int i = 0; i < linkList.size(); i++) {
+            LinksPojo temp = linkList.get(i);
+            System.out.println(temp.getUrl());
+            System.out.println("---");
+            System.out.println(temp.getLabel());
+            System.out.println("---");
+            System.out.println(temp.isActive());
+            System.out.println("___________________________");
         }
 
 

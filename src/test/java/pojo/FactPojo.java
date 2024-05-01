@@ -9,7 +9,13 @@ public class FactPojo {
     private int per_page;
     private String prev_page_url;
     private int to;
-
+    private int from;
+    private int last_page;
+    private String last_page_url;
+    private int total;
+    private String first_page_url;
+    private List<CatDataPojo> data;
+    private List<LinksPojo> links;
     public List<LinksPojo> getLinks() {
         return links;
     }
@@ -17,11 +23,6 @@ public class FactPojo {
     public void setLinks(List<LinksPojo> links) {
         this.links = links;
     }
-
-    private int total;
-    private String first_page_url;
-    private List<CatDataPojo> data;
-    private List<LinksPojo> links;
 
     public String getFirst_page_url() {
         return first_page_url;
@@ -54,11 +55,6 @@ public class FactPojo {
     public void setLast_page_url(String last_page_url) {
         this.last_page_url = last_page_url;
     }
-
-    private int from;
-    private int last_page;
-    private String last_page_url;
-
 
     public String getNext_page_url() {
         return next_page_url;
@@ -107,7 +103,6 @@ public class FactPojo {
     public void setTotal(int total) {
         this.total = total;
     }
-
 
     public int getCurrent_page() {
         return current_page;
