@@ -35,5 +35,14 @@ public class PayloadUtils {
         return payload;
     }
 
+    public static String getAirportPayload(){
+
+        String payload = "{\n" +
+                "    \"from\": \"ORD\",\n" +
+                "    \"to\": \"MDW\"\n" +
+                "}";
+        return payload;
+    }
+
 
 }
